@@ -1,14 +1,15 @@
 var w = 1800;
-var h = 750;
+var h = 720;
 var game = new Phaser.Game(w, h, Phaser.AUTO, 'phaser-example', { preload: preload, create: create });
 var sprites = [];
 
 function preload() {
-    game.load.image('couch', 'couch.jpg');
+
 }
 
 function create() {
   game.stage.backgroundColor = "#4488AA";
+
   var graphics = game.add.graphics(0, 0);
   for(var i = 0; i < w; i += 20) {
       graphics.moveTo(i,0);
@@ -44,6 +45,10 @@ function createPiece() {
     graphics.lineStyle(2, colour, 1);
     graphics.beginFill(colour, 1)
     graphics.drawRect(-width/2, -height/2, parseInt(width), parseInt(height));
+
+    // var style = { font: "32px Arial", fill: "#ff0044", wordWrap: true, wordWrapWidth: couch.width, align: "center"};
+    // text = game.add.text(0, 0, "- text on a sprite -\ndrag me", style);
+    // text.anchor.set(0.5);
 
     couch.anchor.x = 0.5;
     couch.anchor.y = 0.5;
